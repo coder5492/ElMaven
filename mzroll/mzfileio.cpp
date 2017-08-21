@@ -532,7 +532,7 @@ void mzFileIO::fileImport(void) {
 
     if (_mainwindow->getSettings()->value("uploadMultiprocessing").toInt()) {
         int iter = 0;
-        #pragma omp parallel for shared(iter)
+        #pragma omp parallel for shared(iter) 
         for (int i = 0; i < samples.size(); i++) {
             QString filename = samples.at(i);
             mzSample* sample = loadSample(filename);

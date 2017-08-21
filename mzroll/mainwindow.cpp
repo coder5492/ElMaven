@@ -143,7 +143,7 @@ using namespace mzUtils;
 	signal(SIGABRT, signalHandler);
 	signal(SIGSEGV, signalHandler);
 	signal(SIGTERM, signalHandler);
-	#ifdef UNIX
+	#ifdef LINUX
 	signal(SIGQUIT, signalHandler);
 	signal(SIGBUS, signalHandler);
 	signal(SIGSTKFLT, signalHandler);

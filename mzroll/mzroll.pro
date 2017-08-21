@@ -10,6 +10,12 @@ QMAKE_CXXFLAGS += -DOMP_PARALLEL
 QMAKE_CXXFLAGS += -fopenmp
 LIBS += -fopenmp
 
+macx{
+        
+        LIBS += -L/usr/local/opt/llvm/lib -fopenmp
+        LIBS += -L/usr/local/opt/llvm/lib -lgomp
+}
+
 
 QMAKE_STRIP=echo
 PRECOMPILED_HEADER  = stable.h
@@ -34,8 +40,11 @@ QT += sql network xml printsupport
 INCLUDEPATH +=  /usr/include/x86_64-linux-gnu/qt5/QtXml/ /usr/include/x86_64-linux-gnu/qt5/QtSql
 INCLUDEPATH += ../libmaven ../maven ../pugixml/src ../libneural ../zlib/ ../Eigen/ ../libpls ../libcsvparser ../libplog
 
-LIBS += -L.  -lmaven -lpugixml -lneural -lcsvparser -lpls -lplog                  #64bit
 
+LIBS += -L.  -lmaven -lpugixml -lneural -lcsvparser -lpls -lplog                  #64bit
+macx {
+    LIBS -= -lplog
+}
 message($$LIBS)
 
 INSTALLS += sources target

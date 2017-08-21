@@ -16,51 +16,56 @@ QMAKE_CXXFLAGS += -fopenmp
 INCLUDEPATH += ../pugixml/src/ ../sqlite ../libmaven ../libneural ../zlib/ ../libcsvparser ../libpls ../peakdetector
 LIBS += -L.  -lmaven -lpugixml -lneural -lcsvparser -lpls -fopenmp
 
+macx {
+        LIBS += -L/usr/local/opt/llvm/lib -fopenmp
+        LIBS += -L/usr/local/opt/llvm/lib -lgomp        
+
+}
 
 
 # Input
-HEADERS += \
-    common.h \
-    testLoadSamples.h \
-    testMassCalculator.h \
-    testCSVReports.h \
-    testMzSlice.h \
-    testLoadDB.h \
-    testPeakDetection.h \
-    testScan.h \
-    testEIC.h \
-    testbase64.h \
-    testMzFit.h \
-    testMzAligner.h \
-    testCLI.h \
-    testCharge.h \
-    ../peakdetector/PeakDetectorCLI.h \
-    ../libmaven/classifier.h \
-    ../libmaven/classifierNeuralNet.h \
-    ../peakdetector/parseOptions.h \
-    ../peakdetector/options.h
+#HEADERS += \
+#    common.h \
+#    testLoadSamples.h \
+#    testMassCalculator.h \
+#    testCSVReports.h \
+#    testMzSlice.h \
+#    testLoadDB.h \
+#    testPeakDetection.h \
+#    testScan.h \
+#    testEIC.h \
+#    testbase64.h \
+#    testMzFit.h \
+#    testMzAligner.h \
+#    testCLI.h \
+#    testCharge.h \
+#    ../peakdetector/PeakDetectorCLI.h \
+#    ../libmaven/classifier.h \
+#    ../libmaven/classifierNeuralNet.h \
+#    ../peakdetector/parseOptions.h \
+#    ../peakdetector/options.h
 
-SOURCES += \
-    common.cpp \
-    testLoadSamples.cpp \
-    testMassCalculator.cpp \
-    testCSVReports.cpp \
-    testPeakDetection.cpp \
-    testMzSlice.cpp \
-    testLoadDB.cpp \
-    testScan.cpp \
-    testEIC.cpp \
-    testbase64.cpp \
-    testMzFit.cpp \
-    testMzAligner.cpp \
-    testCLI.cpp \
-    testCharge.cpp \
-    main.cpp \
-    ../peakdetector/PeakDetectorCLI.cpp  \
-    ../peakdetector/options.cpp \
-    ../libmaven/classifier.cpp \  
-    ../libmaven/classifierNeuralNet.cpp \
-    ../peakdetector/parseOptions.cpp     
+#SOURCES += \
+#    common.cpp \
+#    testLoadSamples.cpp \
+#    testMassCalculator.cpp \
+#    testCSVReports.cpp \
+#    testPeakDetection.cpp \
+#    testMzSlice.cpp \
+#    testLoadDB.cpp \
+#    testScan.cpp \
+#    testEIC.cpp \
+#    testbase64.cpp \
+#    testMzFit.cpp \
+#    testMzAligner.cpp \
+#    testCLI.cpp \
+#    testCharge.cpp \
+#    main.cpp \
+#    ../peakdetector/PeakDetectorCLI.cpp  \
+#    ../peakdetector/options.cpp \
+#    ../libmaven/classifier.cpp \
+#    ../libmaven/classifierNeuralNet.cpp \
+#    ../peakdetector/parseOptions.cpp
 
 
     

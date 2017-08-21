@@ -10,6 +10,10 @@ LDFLAGS     +=  $$OUTPUT_DIR/lib
 LDFLAGS     +=  ./lib
 
 LIBS += -L. -L /usr/lib -L./lib -lnetcdf
+macx{
+
+    LIBS += -L/opt/local/lib -lnetcdf
+}
 
 SOURCES=ms10aux.c ms10enum.c ms10io.c
 HEADERS=ms10.h ms10io.h

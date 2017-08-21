@@ -38,7 +38,7 @@ vector<EIC*> PeakDetector::pullEICs(mzSlice* slice,
                 // double start=omp_get_wtime();
                 #pragma omp for
                 for (unsigned int i = 0; i < samples.size(); i++) {
-                        if (samples[i] == NULL)
+                    if (samples[i] == NULL)
                                 continue;
                         if (samples[i]->isSelected == false)
                                 continue;

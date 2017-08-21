@@ -15,6 +15,13 @@ LDFLAGS     +=  $$OUTPUT_DIR/lib
 
 LIBS += -L.  -lmaven -lpugixml -lneural -lcsvparser -lpls
 
+macx{
+        
+        LIBS += -L/usr/local/opt/llvm/lib -fopenmp
+        LIBS += -L/usr/local/opt/llvm/lib -lgomp
+}
+
+
 SOURCES	= 	PeakDetectorCLI.cpp  \
 		 	options.cpp \
 			../libmaven/classifier.cpp \  

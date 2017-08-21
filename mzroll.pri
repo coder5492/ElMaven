@@ -42,7 +42,8 @@ mac {
     DEFINES += CDFPARSER
     DEFINES += ZLIB
     DEFINES += unix
-    LIBS += -lz -lcdfread -lnetcdf
+    LIBS += -lz -lcdfread
+    LIBS += -L/opt/local/lib -lnetcdf
     DEFINES += MAC
 }
 

@@ -24,6 +24,13 @@ LIBS += -L. -lcsvparser
 
 INCLUDEPATH += ../pugixml/src/ ../libcdfread/ ../zlib/ ../mzroll/ ../libneural/ ../libcsvparser
 
+macx{
+        
+        LIBS += -L/usr/local/opt/llvm/lib -fopenmp
+        LIBS += -L/usr/local/opt/llvm/lib -lgomp        
+}
+
+
 SOURCES = 	base64.cpp \
                 mzMassCalculator.cpp \
                 mzPatterns.cpp \
